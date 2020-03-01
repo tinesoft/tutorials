@@ -1,0 +1,86 @@
+initializr:
+  name:
+    value: sfeir-spring-initializr
+  description:
+    value: 'A SF[Ξ]IR Spring Boot Application'
+  group-id:
+    value: com.sfeir
+    artifact-id:
+      value: sfeir-app
+  javaVersions:
+    - id: 11
+      default: false
+    - id: 1.8
+      default: true
+  languages:
+    - name: Java
+      id: java
+      default: true
+    - name: Kotlin
+      id: kotlin
+      default: false
+  packagings:
+    - name: Jar
+      id: jar
+      default: true
+  types:
+    - name: Gradle Project
+      id: gradle-project
+      description: Generate a Gradle-based project archive
+      tags:
+        build: gradle
+        format: project
+      default: true
+      action: /sfeir-starter.zip
+  dependencies:
+    - name: Web
+      content:
+        - name: Spring Web
+          id: web
+          description: Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+            facets:
+              - web
+              - json
+          links:
+            - rel: guide
+              href: https://spring.io/guides/gs/rest-service/
+              description: Building a RESTful Web Service
+            - rel: reference
+              href: https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-developing-web-applications
+            - rel: guide
+              href: https://spring.io/guides/gs/serving-web-content/
+              description: Serving Web Content with Spring MVC
+            - rel: guide
+              href: https://spring.io/guides/tutorials/bookmarks/
+              description: Building REST services with Spring
+    - name: Ops
+      content:
+        - name: Spring Boot Actuator
+          id: actuator
+          description: Supports built in (or custom) endpoints that let you monitor and manage your application - such as application health, metrics, sessions, etc.
+          links:
+            - rel: guide
+              href: https://spring.io/guides/gs/actuator-service/
+              description: Building a RESTful Web Service with Spring Boot Actuator
+            - rel: reference
+              href: https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#production-ready
+        - name: Spring Boot Admin (Client)
+          id: codecentric-spring-boot-admin-client
+          groupId: de.codecentric
+          artifactId: spring-boot-admin-starter-client
+          description: Required for your application to register with a Spring Boot Admin Server instance.
+          compatibilityRange: "2.0.0.RELEASE"
+          bom: codecentric-spring-boot-admin
+          links:
+            - rel: reference
+              href: https://codecentric.github.io/spring-boot-admin/current/#getting-started
+        - name: Spring Boot Admin (Server)
+          id: codecentric-spring-boot-admin-server
+          groupId: de.codecentric
+          artifactId: spring-boot-admin-starter-server
+          description: A community project to manage and monitor your Spring Boot applications. Provides a UI on top of the Spring Boot Actuator endpoints.
+          compatibilityRange: "2.0.0.RELEASE"
+          bom: codecentric-spring-boot-admin
+          links:
+            - rel: reference
+              href: https://codecentric.github.io/spring-boot-admin/current/#getting-started

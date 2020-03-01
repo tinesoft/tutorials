@@ -1,0 +1,11 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "hello-sfeir": {
+      "description": "A blank schematic.",
+      "factory": "./hello-sfeir/index",
+      "aliases": ["hf"],
+      "schema" : "./hello-sfeir/schema.json"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+    "schema": "http://json-schema.org/schema",
+    "id": "SchematicsHelloSfeir",
+    "title": "Hello Options Schema",
+    "type": "object",
+    "properties": {
+        "location": {
+        "description": "Your current location.",
+        "type": "string",
+        "default": {
+            "source": "argv",
+            "index": 0
+        },
+        "x-prompt": "Where are you right now?"
+        }
+    },
+    "required": [
+        "location"
+    ]
+    
+}
