@@ -5,7 +5,6 @@ import io.spring.initializr.generator.project.contributor.ProjectContributor;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 /**
  * {@link ProjectContributor} that creates the "esdata" test resources
