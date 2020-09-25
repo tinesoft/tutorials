@@ -12,7 +12,7 @@ public class WithdrawalRequestDTO {
   public WithdrawalRequestDTO() {
   }
 
-  public WithdrawalRequestDTO(BigDecimal amount, String accountIban, String ownerId) {
+  public WithdrawalRequestDTO(String ownerId, String accountIban, BigDecimal amount) {
     this.amount = amount;
     this.accountIban = accountIban;
     this.ownerId = ownerId;

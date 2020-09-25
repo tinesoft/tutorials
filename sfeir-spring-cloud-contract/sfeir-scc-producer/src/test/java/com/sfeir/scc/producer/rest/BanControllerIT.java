@@ -31,7 +31,7 @@ public class BanControllerIT {
   @Test
   public void withdraw_successful() throws Exception {
 
-    WithdrawalRequestDTO dto = new WithdrawalRequestDTO(new BigDecimal(200L), "LUSFEIR0000002", "rich_user");
+    WithdrawalRequestDTO dto = new WithdrawalRequestDTO("rich_user", "LUSFEIR0000002", new BigDecimal(200L));
 
     mockMvc.perform(post("/withdraw")
       .contentType(MediaType.APPLICATION_JSON)
@@ -45,7 +45,7 @@ public class BanControllerIT {
   @Test
   public void withdraw_rejected_user_not_allowed() throws Exception {
 
-    WithdrawalRequestDTO dto = new WithdrawalRequestDTO(new BigDecimal(200L), "LUSFEIR0000002", "unauthorized_user");
+    WithdrawalRequestDTO dto = new WithdrawalRequestDTO("unauthorized_user", "LUSFEIR0000002", new BigDecimal(200L));
 
     mockMvc.perform(post("/withdraw")
       .contentType(MediaType.APPLICATION_JSON)
@@ -62,7 +62,7 @@ public class BanControllerIT {
   @Test
   public void withdraw_rejected_insufficient_balance() throws Exception {
 
-    WithdrawalRequestDTO dto = new WithdrawalRequestDTO(new BigDecimal(200L), "LUSFEIR0000003", "poor_user");
+    WithdrawalRequestDTO dto = new WithdrawalRequestDTO("poor_user", "LUSFEIR0000003", new BigDecimal(200L));
 
     mockMvc.perform(post("/withdraw")
       .contentType(MediaType.APPLICATION_JSON)
